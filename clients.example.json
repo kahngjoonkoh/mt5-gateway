@@ -1,0 +1,5 @@
+{
+ "bot-a":       {"token": "CHANGE-ME-long-random", "magic": 101, "symbols": ["BTCUSD"], "max_lots": 0, "max_hold_s": 0},
+ "bot-b":       {"token": "CHANGE-ME-long-random", "magic": 102, "symbols": ["ETHUSD"], "max_lots": 0, "max_hold_s": 4200},
+ "recorder":    {"token": "CHANGE-ME-long-random", "magic": 103, "symbols": ["BTCUSD", "ETHUSD"], "max_lots": 0, "max_hold_s": 0, "read_only": true}
+}

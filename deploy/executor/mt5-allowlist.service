@@ -1,0 +1,13 @@
+[Unit]
+Description=Keep 127.0.0.1 on MT5's WebRequest allow-list (restores the EA's socket after restarts)
+After=mt5-terminal.service mt5-gateway.service
+
+[Service]
+User=ubuntu
+EnvironmentFile=/home/ubuntu/mt5gw/host.env
+ExecStart=/home/ubuntu/mt5gw/mt5-allowlist.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

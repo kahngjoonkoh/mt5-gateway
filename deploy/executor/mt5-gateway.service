@@ -1,0 +1,14 @@
+[Unit]
+Description=mt5-gateway: HTTP API for bots, localhost socket for the EA
+After=network-online.target
+
+[Service]
+User=ubuntu
+EnvironmentFile=/home/ubuntu/mt5gw/host.env
+ExecStart=/usr/bin/python3 -u /home/ubuntu/mt5gw/gateway.py --clients /home/ubuntu/mt5gw/clients.json --state /home/ubuntu/mt5gw/state
+Restart=always
+RestartSec=2
+OOMScoreAdjust=-500
+
+[Install]
+WantedBy=multi-user.target

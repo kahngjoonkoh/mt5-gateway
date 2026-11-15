@@ -1,0 +1,19 @@
+[Unit]
+Description=MetaTrader 5 terminal under Wine, with the MT5Gateway EA attached
+After=mt5-xvfb.service mt5-gateway.service
+Requires=mt5-xvfb.service
+
+[Service]
+User=ubuntu
+EnvironmentFile=/home/ubuntu/mt5gw/host.env
+Environment=DISPLAY=:99 WINEPREFIX=/home/ubuntu/.mt5 WINEDEBUG=-all WINEDLLOVERRIDES=mscoree,mshtml=
+# a wrapper, so a LiveUpdate is allowed to finish instead of looping (see the script)
+ExecStart=/home/ubuntu/mt5gw/mt5-terminal.sh
+ExecStopPost=/usr/bin/wineserver -k
+Restart=always
+RestartSec=10
+# a 1 GB machine: let the kernel kill the terminal (and systemd restart it) before the gateway
+OOMScoreAdjust=300
+
+[Install]
+WantedBy=multi-user.target

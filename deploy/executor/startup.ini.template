@@ -1,0 +1,12 @@
+[Common]
+Login=__LOGIN__
+Password=__PASSWORD__
+Server=__SERVER__
+KeepPrivate=1
+NewsEnable=0
+CertInstall=0
+ProxyEnable=0
+[StartUp]
+Expert=MT5Gateway
+Symbol=EURUSD
+Period=M1
