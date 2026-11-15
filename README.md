@@ -202,3 +202,7 @@ By default the gateway listens on `127.0.0.1:8000` only.
 ```bash
 python3 tests/test_gateway.py   # client -> gateway -> fake EA (same protocol)
 ```
+
+## License
+
+Apache-2.0. See `LICENSE`. Redistributions must keep `NOTICE`.
